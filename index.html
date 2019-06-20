@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grape JS UI</title>
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/grapesjs/dist/css/grapes.min.css"
+    />
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <script src="//unpkg.com/grapesjs"></script>
+  </head>
+  <body>
+    <div class="panel__top">
+      <div class="panel__basic-actions"></div>
+      <div class="panel__devices"></div>
+      <div class="panel__switcher"></div>
+    </div>
+    <div class="editor-row">
+      <div class="editor-canvas">
+        <div id="gjs">
+          <h1>Hello World I'm Grapes JS</h1>
+          <!-- Define all the html elements here -->
+        </div>
+      </div>
+      <div class="panel__right">
+        <div class="layers-container"></div>
+        <div class="styles-container"></div>
+        <div class="traits-container"></div>
+      </div>
+    </div>
+    <div id="blocks"></div>
+    <script type="text/javascript" src="./dist/scripts/index.js"></script>
+  </body>
+</html>
