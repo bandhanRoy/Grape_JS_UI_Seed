@@ -1,2 +1,2 @@
-# Grape_JS_UI_Seed
+# Grape JS UI Seed
 A simple grapes JS starter project
