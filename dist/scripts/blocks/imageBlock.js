@@ -3,7 +3,11 @@
  */
 editor.BlockManager.add("image", {
   id: "image",
-  attributes: { class: "gjs-block-section fa fa-image" },
+  attributes: {
+    class: "gjs-block-section fa fa-image",
+    title: "Image",
+    "data-tooltip-pos": "bottom"
+  },
   label: "<h3>Image</h3>",
   // Select the component once it's dropped
   select: true,
