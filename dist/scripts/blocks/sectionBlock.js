@@ -6,7 +6,8 @@ editor.BlockManager.add("section", {
   label: "<h3>Section</h3>",
   attributes: {
     class: "gjs-block-section fa fa-puzzle-piece",
-    title: "Section"
+    title: "Section",
+    "data-tooltip-pos": "bottom"
   },
   content: `<section>
           <h1>This is a simple title</h1>
