@@ -16,37 +16,20 @@ const editor = grapesjs.init({
     appendTo: ".layers-container"
   },
   blockManager: {
-    appendTo: "#blocks",
-    blocks: [
-      {
-        id: "section", // id is mandatory
-        label: "<i class='fas fa-puzzle-piece'></i>", // You can use HTML/SVG inside labels
-        attributes: { class: "gjs-block-section" },
-        content: `<section>
-          <h1>This is a simple title</h1>
-          <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-        </section>`
-      },
-      {
-        id: "text",
-        attributes: { class: "fas fa-text-height" },
-        content: '<div data-gjs-type="text">Insert your text here</div>'
-      },
-      {
-        id: "image",
-        label: "<i class='fas fa-image'></i>",
-        // Select the component once it's dropped
-        select: true,
-        // You can pass components as a JSON instead of a simple HTML string,
-        // in this case we also use a defined component type `image`
-        content: { type: "image" },
-        // This triggers `active` event on dropped components and the `image`
-        // reacts by opening the AssetManager
-        activate: true
-      }
+    appendTo: "#blocks"
+  },
+  canvas: {
+    script: [
+      "https://code.jquery.com/jquery-3.2.1.slim.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    ],
+    styles: [
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+      "./dist/css/style.css",
+      "https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     ]
   },
-
   //js for devices panel
   mediaCondition: "min-width", // default is `max-width`
   deviceManager: {
@@ -90,7 +73,7 @@ const editor = grapesjs.init({
           {
             id: "show-layers",
             active: true,
-            label: "<i class='fas fa-layer-group'></i>",
+            label: "<i class='fa fa-align-justify'></i>",
             command: "show-layers",
             // Once activated disable the possibility to turn it off
             togglable: false
@@ -98,14 +81,14 @@ const editor = grapesjs.init({
           {
             id: "show-style",
             active: true,
-            label: "<i class='fas fa-palette'></i>",
+            label: "<i class='fa fa-css3'></i>",
             command: "show-styles",
             togglable: false
           },
           {
             id: "show-traits",
             active: true,
-            label: "<i class='fas fa-cog'></i>",
+            label: "<i class='fa fa-cog'></i>",
             command: "show-traits",
             togglable: false
           }
@@ -117,14 +100,14 @@ const editor = grapesjs.init({
         buttons: [
           {
             id: "device-desktop",
-            label: "<i class='fas fa-desktop'></i>",
+            label: "<i class='fa fa-desktop'></i>",
             command: "set-device-desktop",
             active: true,
             togglable: false
           },
           {
             id: "device-mobile",
-            label: "<i class='fas fa-mobile-alt'></i>",
+            label: "<i class='fa fa-mobile'></i>",
             command: "set-device-mobile",
             togglable: false
           }
@@ -185,126 +168,5 @@ const editor = grapesjs.init({
   },
   traitManager: {
     appendTo: ".traits-container"
-  },
-  canvas: {
-    script: [],
-    styles: []
   }
 });
-
-/**
- * for adding custom blocks
- */
-//   editor.BlockManager.add('my-block-id', {
-//   label: '...',
-//   category: '...',
-//   // ...
-// })
-
-/**
- * js for the panel
- */
-editor.Panels.addPanel({
-  id: "panel-top",
-  el: ".panel__top"
-});
-editor.Panels.addPanel({
-  id: "basic-actions",
-  el: ".panel__basic-actions",
-  buttons: [
-    {
-      id: "visibility",
-      active: true, // active by default
-      className: "btn-toggle-borders",
-      label: "<i class='far fa-square'></i>",
-      command: "sw-visibility" // Built-in command
-    },
-    {
-      id: "export",
-      className: "btn-open-export",
-      label: "<i class='fas fa-download'></i>",
-      command: "export-template",
-      context: "export-template" // For grouping context of buttons from the same panel
-    },
-    {
-      id: "show-json",
-      className: "btn-show-json",
-      label: "{ }",
-      context: "show-json",
-      command(editor) {
-        editor.Modal.setTitle("Components JSON")
-          .setContent(
-            `<textarea style="width:100%; height: 250px;">
-            ${JSON.stringify(editor.getComponents())}
-          </textarea>`
-          )
-          .open();
-      }
-    }
-  ]
-});
-/**
- * Panel switcher js
- */
-// Define commands
-editor.Commands.add("show-layers", {
-  getRowEl(editor) {
-    return editor.getContainer().closest(".editor-row");
-  },
-  getLayersEl(row) {
-    return row.querySelector(".layers-container");
-  },
-
-  run(editor, sender) {
-    const lmEl = this.getLayersEl(this.getRowEl(editor));
-    lmEl.style.display = "";
-  },
-  stop(editor, sender) {
-    const lmEl = this.getLayersEl(this.getRowEl(editor));
-    lmEl.style.display = "none";
-  }
-});
-editor.Commands.add("show-styles", {
-  getRowEl(editor) {
-    return editor.getContainer().closest(".editor-row");
-  },
-  getStyleEl(row) {
-    return row.querySelector(".styles-container");
-  },
-
-  run(editor, sender) {
-    const smEl = this.getStyleEl(this.getRowEl(editor));
-    smEl.style.display = "";
-  },
-  stop(editor, sender) {
-    const smEl = this.getStyleEl(this.getRowEl(editor));
-    smEl.style.display = "none";
-  }
-});
-/**
- * js for Traits
- */
-editor.Commands.add("show-traits", {
-  getTraitsEl(editor) {
-    const row = editor.getContainer().closest(".editor-row");
-    return row.querySelector(".traits-container");
-  },
-  run(editor, sender) {
-    this.getTraitsEl(editor).style.display = "";
-  },
-  stop(editor, sender) {
-    this.getTraitsEl(editor).style.display = "none";
-  }
-});
-/**
- * js for responsive panel devices
- */
-editor.Commands.add("set-device-desktop", {
-  run: editor => editor.setDevice("Desktop")
-});
-editor.Commands.add("set-device-mobile", {
-  run: editor => editor.setDevice("Mobile")
-});
-/**
- *
- */
