@@ -14,7 +14,10 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./dist/css/tooltip.css" />
     <script src="//unpkg.com/grapesjs"></script>
+    <script src="https://unpkg.com/grapesjs-tui-image-editor"></script>
+    <script src="https://unpkg.com/grapesjs-plugin-export@1.0.7/dist/grapesjs-plugin-export.min.js"></script>
   </head>
   <body>
     <div class="panel__top">
@@ -23,13 +26,21 @@
       <div class="panel__switcher"></div>
     </div>
     <div class="editor-row">
+      <div class="panel__right">
+        <div id="blocks"></div>
+      </div>
       <div class="editor-canvas">
         <div id="gjs" style="height:0px; overflow:hidden">
           <!-- Define all the html elements here -->
           <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
             <div class="container">
               <a href="#" class="navbar-brand">
-                <img src="./dist/images/logo.png" alt="" />
+                <img
+                  data-gjs-removable="true"
+                  data-gjs-draggable="true"
+                  src="./dist/images/logo.png"
+                  alt=""
+                />
               </a>
               <button
                 class="navbar-toggler"
@@ -39,25 +50,57 @@
                 aria-controls="navbarResponsive"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                data-gjs-removable="true"
+                data-gjs-draggable="true"
               >
                 <span class="navbar-toggler-icon"> </span>
               </button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <a
+                      href="#"
+                      data-gjs-removable="true"
+                      data-gjs-draggable="true"
+                      class="nav-link"
+                      >Home</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
+                    <a
+                      href="#"
+                      data-gjs-removable="true"
+                      data-gjs-draggable="true"
+                      class="nav-link"
+                      >About</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">Services</a>
+                    <a
+                      href="#"
+                      data-gjs-removable="true"
+                      data-gjs-draggable="true"
+                      class="nav-link"
+                      >Services</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">Team</a>
+                    <a
+                      href="#"
+                      data-gjs-removable="true"
+                      data-gjs-draggable="true"
+                      class="nav-link"
+                      >Team</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">Connect</a>
+                    <a
+                      href="#"
+                      data-gjs-removable="true"
+                      data-gjs-draggable="true"
+                      class="nav-link"
+                      >Connect</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -67,9 +110,25 @@
           <!-- Image Slider -->
           <div id="slides" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
-              <li data-target="#slides" data-slide-to="0" class="active"></li>
-              <li data-target="#slides" data-slide-to="1"></li>
-              <li data-target="#slides" data-slide-to="2"></li>
+              <li
+                data-target="#slides"
+                data-gjs-removable="true"
+                data-gjs-draggable="true"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-target="#slides"
+                data-gjs-removable="true"
+                data-gjs-draggable="true"
+                data-slide-to="1"
+              ></li>
+              <li
+                data-target="#slides"
+                data-gjs-removable="true"
+                data-gjs-draggable="true"
+                data-slide-to="2"
+              ></li>
             </ul>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -379,8 +438,12 @@
         <div class="traits-container"></div>
       </div>
     </div>
-    <div id="blocks"></div>
     <script type="text/javascript" src="./dist/scripts/index.js"></script>
+
+    <script
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
     <script
       type="text/javascript"
       src="dist/scripts/panels/topPanel-right.js"
@@ -412,6 +475,10 @@
     <script
       type="text/javascript"
       src="./dist/scripts/blocks/serviceAddressBlock.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./dist/scripts/tootlip/tooltip.js"
     ></script>
   </body>
 </html>

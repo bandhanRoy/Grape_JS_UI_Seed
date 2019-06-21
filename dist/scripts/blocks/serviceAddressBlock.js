@@ -1,5 +1,6 @@
 editor.BlockManager.add("service-address", {
-  attributes: { class: "fa fa-address-card" },
+  attributes: { class: "gjs-block-section fa fa-address-card" },
+  label: "<h3>Address</h3>",
   content: {
     components: [
       {

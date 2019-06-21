@@ -18,6 +18,31 @@ const editor = grapesjs.init({
   blockManager: {
     appendTo: "#blocks"
   },
+  // Image Editor Plugin
+  plugins: ["grapesjs-tui-image-editor", "grapesjs-plugin-export"],
+  pluginsOpts: {
+    "grapesjs-tui-image-editor": {
+      config: {
+        includeUI: {
+          initMenu: "filter"
+        }
+      },
+      icons: {
+        "menu.normalIcon.path": "../icon-d.svg",
+        "menu.activeIcon.path": "../icon-b.svg",
+        "menu.disabledIcon.path": "../icon-a.svg",
+        "menu.hoverIcon.path": "../icon-c.svg",
+        "submenu.normalIcon.path": "../icon-d.svg",
+        "submenu.activeIcon.path": "../icon-c.svg"
+      }
+    },
+    "grapesjs-plugin-export": {
+      addExportBtn: true,
+      btnLabel: "Export to ZIP",
+      filenamePfx: "grapesjs_template",
+      filename: editor => "my-grapes-template.zip"
+    }
+  },
   canvas: {
     script: [
       "https://code.jquery.com/jquery-3.2.1.slim.min.js",
@@ -43,6 +68,11 @@ const editor = grapesjs.init({
         name: "Desktop",
         width: "",
         widthMedia: "1024"
+      },
+      {
+        name: "Tablet",
+        width: "768",
+        widthMedia: ""
       }
     ]
   },
@@ -74,6 +104,10 @@ const editor = grapesjs.init({
             id: "show-layers",
             active: true,
             label: "<i class='fa fa-align-justify'></i>",
+            attributes: {
+              title: "Show Layers",
+              "data-tooltip-pos": "bottom"
+            },
             command: "show-layers",
             // Once activated disable the possibility to turn it off
             togglable: false
@@ -82,12 +116,20 @@ const editor = grapesjs.init({
             id: "show-style",
             active: true,
             label: "<i class='fa fa-css3'></i>",
+            attributes: {
+              title: "Show Style",
+              "data-tooltip-pos": "bottom"
+            },
             command: "show-styles",
             togglable: false
           },
           {
             id: "show-traits",
             active: true,
+            attributes: {
+              title: "Show Traits",
+              "data-tooltip-pos": "bottom"
+            },
             label: "<i class='fa fa-cog'></i>",
             command: "show-traits",
             togglable: false
@@ -101,13 +143,32 @@ const editor = grapesjs.init({
           {
             id: "device-desktop",
             label: "<i class='fa fa-desktop'></i>",
+            attributes: {
+              title: "Desktop View",
+              "data-tooltip-pos": "bottom"
+            },
             command: "set-device-desktop",
+            active: true,
+            togglable: false
+          },
+          {
+            id: "device-tablet",
+            label: "<i class='fa fa-tablet'></i>",
+            attributes: {
+              title: "Tablet View",
+              "data-tooltip-pos": "bottom"
+            },
+            command: "set-device-tablet",
             active: true,
             togglable: false
           },
           {
             id: "device-mobile",
             label: "<i class='fa fa-mobile'></i>",
+            attributes: {
+              title: "Mobile View",
+              "data-tooltip-pos": "bottom"
+            },
             command: "set-device-mobile",
             togglable: false
           }
@@ -129,7 +190,7 @@ const editor = grapesjs.init({
         name: "Dimension",
         open: false,
         // Use built-in properties
-        buildProps: ["width", "min-height", "padding"],
+        buildProps: ["width", "min-height", "padding", "margin"],
         // Use `properties` to define/override single property
         properties: [
           {

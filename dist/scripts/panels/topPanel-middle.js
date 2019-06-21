@@ -7,3 +7,6 @@ editor.Commands.add("set-device-desktop", {
 editor.Commands.add("set-device-mobile", {
   run: editor => editor.setDevice("Mobile")
 });
+editor.Commands.add("set-device-tablet", {
+  run: editor => editor.setDevice("Tablet")
+});

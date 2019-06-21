@@ -1,6 +1,9 @@
 editor.BlockManager.add("card", {
   id: "card",
-  attributes: { class: "fa fa-id-card" },
+  label: `<h3>Card</h3>`,
+  attributes: {
+    class: "gjs-block-section fa fa-id-card"
+  },
   content: {
     tagName: "div",
     classes: ["col-md-4"],
