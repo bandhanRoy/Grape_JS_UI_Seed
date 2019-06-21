@@ -16,7 +16,7 @@ editor.Panels.addPanel({
       label: "<i class='fa fa-square-o'></i>",
       attributes: {
         title: "Block",
-        "data-tooltip-pos": "bottom"
+        "data-tooltip-pos": "right"
       },
       command: "sw-visibility" // Built-in command
     },
@@ -25,7 +25,7 @@ editor.Panels.addPanel({
       className: "btn-open-export",
       attributes: {
         title: "Export",
-        "data-tooltip-pos": "bottom"
+        "data-tooltip-pos": "right"
       },
       label: "<i class='fa fa-download'></i>",
       command: "export-template",
@@ -36,7 +36,7 @@ editor.Panels.addPanel({
       className: "btn-show-json",
       attributes: {
         title: "JSON Viewer",
-        "data-tooltip-pos": "bottom"
+        "data-tooltip-pos": "right"
       },
       label: "{ }",
       context: "show-json",
@@ -55,7 +55,7 @@ editor.Panels.addPanel({
       label: "<i class='fa fa-arrow-down'></i>",
       attributes: {
         title: "Download",
-        "data-tooltip-pos": "bottom"
+        "data-tooltip-pos": "right"
       },
       command: "download-template",
       context: "download-template" // For grouping context of buttons from the same panel
@@ -65,7 +65,7 @@ editor.Panels.addPanel({
       label: "<i class='fa fa-trash-o'></i>",
       attributes: {
         title: "Clear Canvas",
-        "data-tooltip-pos": "bottom"
+        "data-tooltip-pos": "right"
       },
       command: "canvas-clear",
       context: "canvas-clear" // For grouping context of buttons from the same panel
