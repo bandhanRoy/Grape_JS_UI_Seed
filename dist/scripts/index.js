@@ -106,7 +106,7 @@ const editor = grapesjs.init({
             label: "<i class='fa fa-align-justify'></i>",
             attributes: {
               title: "Show Layers",
-              "data-tooltip-pos": "bottom"
+              "data-tooltip-pos": "left"
             },
             command: "show-layers",
             // Once activated disable the possibility to turn it off
@@ -118,7 +118,7 @@ const editor = grapesjs.init({
             label: "<i class='fa fa-css3'></i>",
             attributes: {
               title: "Show Style",
-              "data-tooltip-pos": "bottom"
+              "data-tooltip-pos": "left"
             },
             command: "show-styles",
             togglable: false
@@ -128,7 +128,7 @@ const editor = grapesjs.init({
             active: true,
             attributes: {
               title: "Show Traits",
-              "data-tooltip-pos": "bottom"
+              "data-tooltip-pos": "left"
             },
             label: "<i class='fa fa-cog'></i>",
             command: "show-traits",
