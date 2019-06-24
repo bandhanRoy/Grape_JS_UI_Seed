@@ -3,9 +3,9 @@
  */
 editor.BlockManager.add("section", {
   id: "section", // id is mandatory
-  label: "<h3>Section</h3>",
+  label: "Section",
   attributes: {
-    class: "gjs-block-section fa fa-puzzle-piece",
+    class: "fa fa-puzzle-piece block-margin",
     title: "Section",
     "data-tooltip-pos": "bottom"
   },

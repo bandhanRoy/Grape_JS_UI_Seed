@@ -4,11 +4,11 @@
 editor.BlockManager.add("image", {
   id: "image",
   attributes: {
-    class: "gjs-block-section fa fa-image",
+    class: "fa fa-image block-margin",
     title: "Image",
     "data-tooltip-pos": "bottom"
   },
-  label: "<h3>Image</h3>",
+  label: "Image",
   // Select the component once it's dropped
   select: true,
   // You can pass components as a JSON instead of a simple HTML string,

@@ -1,8 +1,8 @@
 editor.BlockManager.add("card", {
   id: "card",
-  label: `<h3>Card</h3>`,
+  label: `Card`,
   attributes: {
-    class: "gjs-block-section fa fa-id-card",
+    class: "fa fa-id-card block-margin",
     title: "Card",
     "data-tooltip-pos": "bottom"
   },

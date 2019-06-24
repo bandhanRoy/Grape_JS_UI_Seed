@@ -4,9 +4,9 @@
 
 editor.BlockManager.add("text", {
   id: "text",
-  label: "<h3>Text</h3>",
+  label: "Text",
   attributes: {
-    class: "gjs-block-section fa fa-text-height",
+    class: "fa fa-text-height block-margin",
     title: "Text",
     "data-tooltip-pos": "bottom"
   },

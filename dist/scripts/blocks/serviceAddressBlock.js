@@ -1,10 +1,10 @@
 editor.BlockManager.add("service-address", {
   attributes: {
-    class: "gjs-block-section fa fa-address-card",
+    class: "fa fa-address-card block-margin",
     title: "Address",
     "data-tooltip-pos": "bottom"
   },
-  label: "<h3>Address</h3>",
+  label: "Address",
   content: {
     components: [
       {

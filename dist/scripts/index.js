@@ -19,41 +19,14 @@ const editor = grapesjs.init({
     appendTo: "#blocks"
   },
   // Image Editor Plugin
-  plugins: ["grapesjs-tui-image-editor", "grapesjs-plugin-export"],
+  plugins: ["grapesjs-plugin-export"],
   pluginsOpts: {
-    "grapesjs-tui-image-editor": {
-      config: {
-        includeUI: {
-          initMenu: "filter"
-        }
-      },
-      icons: {
-        "menu.normalIcon.path": "../icon-d.svg",
-        "menu.activeIcon.path": "../icon-b.svg",
-        "menu.disabledIcon.path": "../icon-a.svg",
-        "menu.hoverIcon.path": "../icon-c.svg",
-        "submenu.normalIcon.path": "../icon-d.svg",
-        "submenu.activeIcon.path": "../icon-c.svg"
-      }
-    },
     "grapesjs-plugin-export": {
       addExportBtn: true,
       btnLabel: "Export to ZIP",
       filenamePfx: "grapesjs_template",
       filename: editor => "my-grapes-template.zip"
     }
-  },
-  canvas: {
-    script: [
-      "https://code.jquery.com/jquery-3.2.1.slim.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js",
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    ],
-    styles: [
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
-      "./dist/css/style.css",
-      "https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    ]
   },
   //js for devices panel
   mediaCondition: "min-width", // default is `max-width`
@@ -229,5 +202,17 @@ const editor = grapesjs.init({
   },
   traitManager: {
     appendTo: ".traits-container"
+  },
+  canvas: {
+    script: [
+      "https://code.jquery.com/jquery-3.2.1.slim.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    ],
+    styles: [
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+      "./dist/css/style.css",
+      "https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    ]
   }
 });
