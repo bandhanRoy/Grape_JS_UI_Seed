@@ -84,13 +84,3 @@ body {
 .panel__devices {
   position: initial;
 }
-/* custom css*/
-.gjs-block.fa {
-  font-size: 2em;
-  /* line-height: 0em !important; */
-  padding: 9px;
-  width: 70px !important;
-}
-.block-margin {
-  margin: 10px 1%;
-}

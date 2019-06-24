@@ -1,0 +1,9 @@
+/* custom css */
+.gjs-block.fa {
+  font-size: 2em;
+  padding: 9px;
+  width: 70px !important;
+}
+.block-margin {
+  margin: 10px 1%;
+}
